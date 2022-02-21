@@ -1,7 +1,6 @@
 // Dependencies
 import express from 'express';
 import cors from 'cors';
-
 import tasks from './controllers/tasks_router.js';
 
 // Application
