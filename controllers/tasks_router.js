@@ -1,6 +1,6 @@
 // Dependencies
 import express from 'express';
-import TasksController from './tasks_controller';
+import TasksController from './tasks_controller.js';
 
 // Express Router
 const router = express.Router();
