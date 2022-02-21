@@ -19,15 +19,12 @@ export default class TasksDAO {
     // Create a task Document in Mongo by passing in todo object
     static async addTask(task, priority, dueDate, description) {
         try {
-            let date = new Date();
-            let dateCreated = date.getFullYear() + '/' + date.getMonth() + '/' + date.getDate()
-
             const taskDoc = {
                 task: task, 
                 priority: priority, 
                 dueDate: dueDate, 
                 description: description,
-                dateCreated: dateCreated
+                dateCreated: new Date()
             }
             return await tasks.insertOne(taskDoc)
         } 
