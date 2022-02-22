@@ -78,4 +78,18 @@ export default class TasksDAO {
             return tasksList
         }
     }
+
+    static async getTask(taskId) {
+        let cursor;
+        try{
+            cursor = await tasks.find({"_id": ObjectId(taskId)});
+            const tasksList = await cursor.toArray();
+            return tasksList
+        }
+        catch(error) {
+            console.error(`Unable to issue find command, ${error}`);
+            let tasksList = [];
+            return tasksList
+        }
+    }
 }

@@ -14,6 +14,7 @@ router.route('/new').post(TasksController.PostTask);
 
 // Route to update and delete a task
 router.route('/:id')
+    .get(TasksController.GetTask)
     .put(TasksController.UpdateTask)
     .delete(TasksController.DeleteTask);
 

@@ -58,6 +58,18 @@ class TasksController {
             res.status(500).json({error: error.message});
         }
     }
+
+    // Retrieve one task by id
+    static async GetTask(req, res) {
+        try{
+            const taskId = req.params.id
+            const response = await TasksDAO.getTask(taskId)
+            res.json(response);
+
+        } catch(error) {
+            res.status(500).json({error: error.message});
+        }
+    }
 }
 
 export default TasksController;
