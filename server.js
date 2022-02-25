@@ -13,6 +13,10 @@ app.use(express.json());
 // Routes
 app.use('/tasks', tasks);
 
+app.use('/', (req,res) => {
+    res.status(200).json({status: "success"})
+})
+
 app.use('*', (req,res) => {
     res.status(404).json({error: "Page not found"})
 })
